@@ -1,0 +1,90 @@
+author = "Ghost"; // Author
+onLoadName = "Enemy Assault"; // Mission name (temporary solution; actual name set in editor will be used later in the alpha)
+onLoadMission = "Edited by bux u. BOB -  1.1.0" // Description
+loadScreen = "img\loadscreen_mission2.paa"; // Preview picture
+overviewText = "Enemy forces occupy most of Altis. Await orders from command and complete all tasks given. Good Luck.";
+class Header
+{
+  gameType = Coop;
+  minPlayers = 1;
+  maxPlayers = 36;
+};
+
+//enableDebugConsole = 1;
+
+ShowGPS = 1;
+
+class Params
+{
+
+    #include "ghst_params.hpp"
+
+};
+
+// description.ext settings for revive
+///////////////////////////////////////////////////////////////////////////////////////////
+Respawn = "BASE";
+RespawnDelay = 3;
+RespawnDialog = 0;
+disabledAI = 1;
+
+
+#include "dlg\Spawnveh.hpp"
+#include "VAS\menu.hpp"
+#include "taw_vd\dialog.hpp"
+
+
+class cfgFunctions {
+
+  //SOB functions
+  #include "EPD\EPDcfgFunctions.hpp"
+  
+  //ghst functions
+  #include "functions\cfgfunctions.hpp"
+  #include "VAS\cfgfunctions.hpp"
+  #include "taw_vd\CfgFunctions.hpp"
+    
+  class bux {
+    class bux {
+      file = "functions\bux";
+      class addDefaultItems;
+      class getAllGear;
+      class getRandomAppearance;
+      class loadoutInsur;
+      class resetUnit;
+      class restoreGear;
+    };
+  };
+};
+
+// Comm Menu
+///////////////////////////////////////////////////////////////////////////////////////////
+#include "comm_menu.h"
+///////////////////////////////////////////////////////////////////////////////////////////
+//Debrief
+class CfgDebriefing
+{  
+  class End1
+  {
+    title = "Mission Completed";
+    subtitle = "";
+    description = "Good Job Ladies! You made it out alive!";
+    pictureBackground = "";
+    picture = "b_inf";
+    pictureColor[] = {0.0,0.3,0.6,1};
+  };
+  class Fail
+  {
+    title = "Mission Failed";
+    subtitle = "";
+    description = "You all died";
+    pictureBackground = "";
+    picture = "b_inf";
+    pictureColor[] = {0.0,0.3,0.6,1};
+  };
+};
+
+
+
+
+
